@@ -51,6 +51,7 @@ int main(){
    cout<<"-------------------------"<<endl;
    s.display();
     return 0;
+    
 }
 //define student class with following private data members
 /*
