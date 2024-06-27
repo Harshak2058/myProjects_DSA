@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 void bubbleSort(int arr[], int n)
 {
  for(int i=0;i<n-1;i++)
@@ -17,10 +18,21 @@ void bubbleSort(int arr[], int n)
 void bubbleArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
-    {cout<<arr[i]<<"\t";
+    {
+        cout<<arr[i]<<"\t";
     }
 }
 
+void insertion(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        int j=i;
+        while(j>0 && arr[j-1]>arr[j])
+        swap(arr[j-1],arr[j]);
+        j--;
+    }
+}
 int main()
 {
     int n=5;
