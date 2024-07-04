@@ -4,7 +4,7 @@ using namespace std;
 struct node{
 int data;
 struct node *next;
-} *start=NULL,*nn, *temp;
+} *start=NULL,*nn, *temp,*loc;
 
 void insertBeg(int v)
 {
@@ -66,6 +66,57 @@ void insertEnd(int v)
    }
 
 }
+void delBeg()
+{
+    if(start==NULL)
+    {
+        cout<<"nothing to delete"<<endl;
+    }
+    else{
+    temp=start;
+    start=start->next;
+    delete temp;
+    }
+}
+void delEnd()
+{
+if(start==NULL)
+    {
+        cout<<"nothing to delete"<<endl;
+    }
+    else{
+    temp= start;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    delete temp;
+
+    }
+}
+void delMiddle(int pos)
+{
+    if(start==NULL)
+    {
+        cout<<"nothing to delete"<<endl;
+    }
+    else{
+    temp= start;
+   
+    while(temp!=NULL)
+    {
+        
+         if(temp->next->data==pos)
+         {
+            temp->next = loc;
+            temp->next=loc->next;
+         }
+        temp=temp->next;
+    }
+   
+
+    }
+}
 void display()
 {
     temp=start;
@@ -78,10 +129,20 @@ void display()
 
 int main()
 {
- insertBeg(10);
+    insertBeg(10);
+ insertBeg(20);
+ insertBeg(30);
+ insertBeg(40);
  insertMiddle(10,20);
-insertEnd(30);
+insertEnd(50);
+display();
+delBeg();
+delMiddle(40);
+delEnd();
 display();
     return 0;
     
 }
+
+
+//loc->next = temp->next;
