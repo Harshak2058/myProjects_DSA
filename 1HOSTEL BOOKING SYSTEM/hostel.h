@@ -1,0 +1,1 @@
+#define HOSTEL_H
